@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  kidsleerapp:
+    build: .
+    container_name: kidsleerapp-dev
+    ports:
+      - "3001:3001"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - PORT=3001
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
+    networks:
+      - kidsleerapp-network
+
+networks:
+  kidsleerapp-network:
+    driver: bridge
