@@ -50,7 +50,7 @@ const HomeScreen = () => {
 
   const handleAdminClick = () => {
     const pwd = prompt('Voer het admin-wachtwoord in:');
-    if (pwd === 'Marken146!') {
+    if (pwd === 'Test1234') {
       navigate('/admin');
     } else if (pwd !== null) {
       alert('Onjuist wachtwoord');
